@@ -1,0 +1,2 @@
+C:/Kumar Project/allImpAppBAckup/anp copy/android/app/.cxx/Debug/3t2p692o/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Kumar Project/allImpAppBAckup/anp copy/android/app/.cxx/Debug/3t2p692o/arm64-v8a/CMakeFiles/rebuild_cache.dir
