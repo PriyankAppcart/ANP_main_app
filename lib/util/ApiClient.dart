@@ -12,14 +12,14 @@ class ApiClient {
 
 // stagging
 //
-//   static final String BASE_URL = "http://34.41.222.187/stagging/api/v1/";
-//   static final String IMG_BASE_URL =
-//       "http://34.41.222.187/stagging/storage/app/";
+  static final String BASE_URL = "http://34.41.222.187/stagging_new/api/v1/";
+  static final String IMG_BASE_URL =
+      "http://34.41.222.187/stagging_new/storage/app/";
 //   static final String IMG_BASE_GOOGLE_URL =
 //       "https://storage.googleapis.com/kp_stagging_photos/stagging/";
 
-  static final String BASE_URL = "http://192.168.1.86:81/ANP_SAFETY/api/v1/";
-  static final String IMG_BASE_URL = "http://192.168.1.86:81/ANP_SAFETY/storage/app/";
+  // static final String BASE_URL = "http://192.168.1.86:81/ANP_SAFETY/api/v1/";
+  // static final String IMG_BASE_URL = "http://192.168.1.86:81/ANP_SAFETY/storage/app/";
   static final String IMG_BASE_GOOGLE_URL =
       "https://storage.googleapis.com/kp_stagging_photos/stagging/";
 

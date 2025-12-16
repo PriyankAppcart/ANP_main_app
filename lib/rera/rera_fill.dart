@@ -46,6 +46,8 @@ class ReraFillPageState extends State<ReraFillPage> {
     this.num = num;
   }
 
+
+
   List stageList = [];
   var particulars = "";
   var percentage = "";
@@ -54,6 +56,9 @@ class ReraFillPageState extends State<ReraFillPage> {
   var selectedStageID = [];
   var tradeName = "Select trade", tradeID = 0;
   List viewReraList = [];
+
+  var rera_id_new='0';
+
 
   final comments = TextEditingController();
   final FocusNode commentsFocus = FocusNode();
@@ -2014,6 +2019,7 @@ class ReraFillPageState extends State<ReraFillPage> {
         "photo_count": _image.length,
         "photo": photo
       };
+      print('map is $map');
 
       List aaaa = [];
       for (int i = 0; i < selectedStageID.length; i++) {
@@ -2022,15 +2028,27 @@ class ReraFillPageState extends State<ReraFillPage> {
         };
         aaaa.add(map);
       }
+      log('project data is ${projectData['id']}');
 
       print("FormData map : $map");
       print("selectedStageID =====: ${selectedStageID.length}");
       print("aaaa =====: ${aaaa.length}");
       print("aaaa =====: ${aaaa}");
+      if(projectData['id']==null){
+        print("priject is is ${projectData['id']}------${projectData['id'].runtimeType}");
+        rera_id_new='0';
+
+      }else{
+        print("priject is is333 ${projectData['id']}------${projectData['id'].runtimeType}");
+
+        rera_id_new="${projectData['id']}";
+      }
+
+
 
       FormData formData = FormData.fromMap({
         "status": "$sta",
-        "rera_id": "${projectData['id']}",
+        "rera_id": rera_id_new,
         "revoker_comments": revokeWithComments.text,
         "role_id": ApiClient.roleID,
         "user_type": "${ApiClient.userType}",
@@ -2043,6 +2061,14 @@ class ReraFillPageState extends State<ReraFillPage> {
         "photo_count": _image.length,
         "photo": photo
       });
+
+
+      for (var field in formData.fields) {
+        print('${field.key} : ${field.value}');
+      }
+
+
+      print("from data $formData");
       dio.options.headers['Authorization'] = '$userToken';
       dio.options.headers['Content-Type'] = 'application/json';
 
@@ -2158,6 +2184,12 @@ class ReraFillPageState extends State<ReraFillPage> {
               toolbarTitle: "ANP Application",
               statusBarColor: app_color,
               backgroundColor: Colors.white,
+              // 🔥 IMPORTANT FIX
+              hideBottomControls: true,
+              lockAspectRatio: false,
+
+              // 🔥 This prevents drawing under status bar
+              initAspectRatio: CropAspectRatioPreset.original,
             )
           ]);
 

@@ -64,6 +64,7 @@ class RERASelectedViewListPageState extends State<RERASelectedViewListPage> {
   }
 
   apiCall(BuildContext context) async {
+    print('api call');
     try {
       final result = await InternetAddress.lookup('google.com');
       if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
@@ -356,6 +357,7 @@ class RERASelectedViewListPageState extends State<RERASelectedViewListPage> {
     if(response.statusCode == 200 || response.statusCode == 201){
       if(decoded['status']){
         setState(() {
+          print('rera collection is ${decoded['in_progress_record']}');
           reraCollection = decoded['in_progress_record'];
           apiFlag = true;
           apiStustFlag = true;
